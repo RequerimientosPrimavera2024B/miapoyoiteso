@@ -21,21 +21,21 @@ Example: En el que el usuario olvida su contraseña
     And Envia un correo con un link para recuperar la contraseña
 
 Example: En el que un usuario dado de baja del ITESO intenta iniciar sesión
-    Given El usuario se encuentra en la página de inicio de MiApoyoIteso
-    When El usuario intenta iniciar sesión
-    Then El sistema valida que el usuario haya ingresado un correo y contraseña válidos,
+    Given El usuario se encuentra en la página de inicio de MiApoyoIteso y está dado de baja
+    When El usuario intenta iniciar sesión estando dado de baja
+    Then El sistema valida que el usuario haya ingresado un correo y contraseña válidos
     And no permite el acceso al sistema indicando que está dado de baja
 
 Example: En el que el usuario es egresado
-    Given El usuario se encuentra en la página de inicio de MiApoyoIteso
-    When El usuario intenta iniciar sesión
-    Then El sistema valida que el usuario haya ingresado un correo y contraseña válidos,
+    Given El usuario se encuentra en la página de inicio de MiApoyoIteso y es egresado
+    When El usuario intenta iniciar sesión como egresado del ITESO
+    Then El sistema valida que el usuario haya ingresado un correo y contraseña válidos y que sea egresado
     And muestra una insignia indicando que el usuario es egresado
 
 Example: En el que el usuario es profesor
-    Given El usuario se encuentra en la página de inicio de MiApoyoIteso
-    When El usuario intenta iniciar sesión
-    Then El sistema valida que el usuario haya ingresado un correo y contraseña válidos,
+    Given El usuario se encuentra en la página de inicio de MiApoyoIteso y es profesor
+    When El usuario intenta iniciar sesión como profesor del ITESO
+    Then El sistema valida que el usuario haya ingresado un correo y contraseña válidos y que sea profesor
     And muestra una insignia indicando que el usuario es profesor
 
 Example: En el que un nuevo usuario quiere revisar su información
